@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0f1b4c;
+}
+
+/* html {
+    font-size: 62.5%;
+} */
+
+body {
+    /* font-size: 1.6rem; */
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1d1d1d;
+}
+
+h6 {
+    color: #d8d8d8;
+}
+
+/* ================================================ */
+/* navbar */
+
+.navbar {
+    font-size: 16px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    padding: 0 20px;
+}
+
+.navbar i {
+    font-size: 1.2rem;
+    padding: 0 7px;
+    cursor: pointer;
+    /* font-weight: 400; */
+    transition: 0.3s ease;
+}
+
+/* bỏ border color màu đen icon */
+.btn.position-relative:active {
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.dropdown-item:active {
+    background-color: #333333;
+}
+/* ================================================= */
+/* Danh mục sản phẩm */
+
+.card-title-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+/*Lớp phủ màu trắng danh mục sản phẩm*/
+
+.card.text-black:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: -webkit-linear-gradient(
+        bottom,
+        rgba(255, 255, 255, 0.65),
+        transparent
+    );
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.65) 0, transparent);
+}
+.card.text-black img {
+    transition: 0.3s;
+}
+
+.card.text-black:hover img {
+    transform: scale(1.05);
+}
+
+/* đưa z index title của danh mục sản phẩm lên đầu */
+.card-img-overlay.d-flex.align-items-end {
+    z-index: 999;
+}
+
+/* thêm gạch dưới title chính (Danh mục sản phẩm) */
+.title-main {
+    position: relative;
+}
+.title-main::before {
+    content: "";
+    width: 92px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    background: #000;
+    bottom: -15px;
+    transform: translateX(-50%);
+}
+
+/* =========================================================== */
+/* top sản phẩm bán chạy */
+
+.nav-pills .nav-link,
+.nav-pills .nav-link:focus,
+.nav-pills .nav-link:hover {
+    color: #000000; /* Đổi màu chữ sang đen */
+}
+
+.nav-pills .nav-link.active {
+    color: #ffffff; /* Đổi màu chữ của tab đang chọn sang trắng */
+    background-color: #000000; /* Đổi màu nền của tab đang chọn sang đen */
+}
+
+.nav-pills .nav-link {
+    color: rgba(
+        0,
+        0,
+        0,
+        0.9
+    ); /* Đổi màu chữ của các tab còn lại sang màu đen nhạt */
+}
+
+.nav-pills .nav-link:not(.disabled):not(:disabled).active:focus,
+.nav-pills .nav-link:not(.disabled):not(:disabled):active,
+.nav-pills .nav-link:not(.disabled):not(:disabled):active:focus,
+.nav-pills .show > .nav-link,
+.nav-pills .dropdown-item.active,
+.nav-pills .dropdown-item:hover,
+.nav-pills .dropdown-item:focus,
+.nav-pills .dropdown-item.active:focus {
+    color: #ffffff; /* Đổi màu chữ khi hover hoặc chọn các tab */
+    background-color: #000000; /* Đổi màu nền khi hover hoặc chọn các tab */
+}
+/* ==================================================== */
+/* Box Sản phẩm */
+
+.product-inner-box .icons {
+    display: flex;
+    /* align-items: flex-end; */
+    right: 15px;
+    flex-direction: column;
+    gap: 4px;
+    top: -3%;
+    transition: all 0.2s ease-in-out, transform 0.2s ease-in-out,
+        opacity 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.product-inner-box .icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+    /* background : #ccc; */
+}
+
+.product-inner-box .onsale .badge {
+    background: #000;
+    font-size: 12px;
+    padding: 5px 14px;
+    top: 0px;
+    position: absolute;
+}
+
+.product-inner-box .onsale .badge:before {
+    border-width: 10px 0px 0px 10px;
+    border-color: transparent transparent transparent #000;
+    content: "";
+    position: absolute;
+    right: -8px;
+    width: 0;
+    bottom: 0;
+    border-style: solid;
+}
+
+.product-inner-box .onsale .badge:after {
+    border-width: 10px 8px 0px 10px;
+    border-color: #000 transparent transparent;
+    content: "";
+    position: absolute;
+    right: -8px;
+    width: 0;
+    top: 0;
+    border-style: solid;
+}
+
+.product-inner-box img {
+    box-shadow: 0 33px 61px -29px rgb(0 0 0 / 26%);
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+}
+.product-box.is-hover .icons {
+    transform: rotateY(-3%);
+    top: 3%;
+    opacity: 1;
+}
+.cart-btn {
+    position: absolute;
+    bottom: 60px;
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out, transform 0.2s ease-in-out,
+        opacity 0.2s ease-in-out;
+}
+
+.product-box.is-hover .cart-btn {
+    opacity: 1;
+}
+/* ====================================== */
+/* nhận thông tin khuyến mãi của chúng tôi */
+/* bỏ viền xanh của input form */
+.form-control:focus {
+    border-color: rgba(13, 110, 253, 0);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0);
+}
+
+/* breadcrumb cây thư mục */
+.breadcrumb-item a {
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+}

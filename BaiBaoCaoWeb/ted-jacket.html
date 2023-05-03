@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+    <script src="./assets/jquery-3.6.4.js"></script>
+    <!-- font awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
+    <!-- <link rel="stylesheet" href="./assets/all.css"> -->
+    <script src="./assets/popper.min.js"></script>
+    <script src="./assets/bootstrap.js"></script>
+    <link rel="stylesheet" href="./assets/font/stylesheet.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="./assets/custom.js"></script>
+    <style>
+        /* hình sản phẩm nhỏ */
+        .small-img-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .small-img-col {
+            cursor: pointer;
+        }
+
+        /* btn size vs color */
+        .btn-check {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            pointer-events: none;
+        }
+
+        .label-size {
+
+            width: 45px;
+        }
+
+        .label-color {
+
+            width: 80px;
+        }
+
+        /* btn số lượng */
+        .group-soLuong {
+            width: 120px;
+
+        }
+
+        .no-border-radius, .nav-pills .nav-link {
+            border-radius: 0px;
+        }
+
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html" style="width: 20%;">
+                <img src="./assets/img/symbolic logo.png" alt="" width="100%" style="min-width: 150px;">
+            </a>
+            <div class="order-lg-2 nav-btns">
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-search"></i>
+
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-bag"></i>
+
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-dark">2</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person pe-0"></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#frmdk">Đăng ký</a>
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#frmdn">Đăng nhập</a>
+                    </div>
+                </button>
+            </div>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="./ALL.html">ALL</a>
+                            <a class="dropdown-item" href="./VARSITY.html">VARSITY</a>
+                            <a class="dropdown-item" href="./HOODIES.html">HOODIES</a>
+                            <a class="dropdown-item" href="./JACKET.html">JACKET</a>
+                            <a class="dropdown-item" href="./CARDIGANS.html">CARDIGANS</a>
+                            <a class="dropdown-item" href="./T-SHIRTS-POLO-SHIRTS.html">T-SHIRTS & POLO-SHIRTS</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- cây thư mục breadcrumb -->
+    <div class="container">
+        <div class="row my-5">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb d-flex justify-content-center pt-3">
+                    <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a class="text-uppercase" href="./VARSITY.html">Varsity</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ted Jacket</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- body -->
+    <section class="">
+        <div class="container ">
+            <!-- Thông tin sản phẩm -->
+            <div class="row">
+                <!-- ảnh sản phẩm và ảnh nhỏ -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="row d-flex justify-content-center" >
+                        <img id="Main-Img" class=" pb-1" style="max-width: 500px; min-height: 500px; "
+                            src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg" alt="ted-jacket">
+                    </div>
+                    <div class="row">
+                        <div class="small-img-group">
+                            <div class="small-img-col" style="max-width: 150px; max-height: 150px">
+                                <img class="small-img" width="100%"
+                                    src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg" alt="ted-jacket">
+                            </div>
+                            <div class="small-img-col" style="max-width: 150px; max-height: 150px">
+                                <img class="small-img" width="100%"
+                                    src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-1.jpg" alt="ted-jacket">
+                            </div>
+                            <div class="small-img-col" style="max-width: 150px; max-height: 150px">
+                                <img class="small-img" width="100%"
+                                    src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-2.jpg" alt="ted-jacket">
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- thông tin sản phẩm -->
+                <div class="col-lg-6 col-md-12 px-3">
+                    <div class="row border-bottom">
+                        <h2 class="pt-5">Ted Jacket</h2>
+                        <h3 class="py-3">299.000 VND</h3>
+                        <div class="py-3">
+                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" id="size-M" name="size" autocomplete="off"
+                                    checked>
+                                <label class="btn btn-outline-dark label-size" for="size-M">M</label>
+
+                                <input type="radio" class="btn-check" id="size-L" name="size" autocomplete="off">
+                                <label class="btn btn-outline-dark label-size" for="size-L">L</label>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="btn-group py-3" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" id="color-1" name="color" autocomplete="off"
+                                    value="color-1" checked>
+                                <label class="btn btn-outline-dark label-color" for="color-1">Blue</label>
+
+                                <input type="radio" class="btn-check" id="color-2" name="color" autocomplete="off"
+                                    value="color-2">
+                                <label class="btn btn-outline-dark label-color" for="color-2">Grey</label>
+
+                                <input type="radio" class="btn-check" id="color-3" name="color" autocomplete="off"
+                                    value="color-3">
+                                <label class="btn btn-outline-dark label-color" for="color-3">Black</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row border-bottom">
+                        <div class="col-12">
+                            <div class="service-product pt-3">
+                                <p class="item">
+                                    <i class="bi bi-box-seam"></i> Giao hàng toàn quốc
+                                </p>
+                                <p class="item">
+                                    <i class="bi bi-arrow-repeat"></i> Đổi trả trong 7 ngày
+                                </p>
+                                <p class="item">
+                                    <i class="bi bi-cash"></i> Thanh toán khi nhận hàng
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-group group-soLuong py-3">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-dark no-border-radius" type="button"
+                                        id="button-giam">-</button>
+                                </div>
+                                <input style="border: 1px solid black;" type="number" class="form-control text-center"
+                                    aria-label="Số lượng" aria-describedby="button-addon1" value="1" minlength="0">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-dark no-border-radius" type="button"
+                                        id="button-tang">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 py-3">
+                            <button type="button" class="btn btn-outline-dark no-border-radius w-100">Thêm vào giỏ
+                                hàng</button>
+                        </div>
+                        <div class="col-lg-6 col-md-12 py-3">
+                            <button type="button" class="btn btn-outline-dark no-border-radius w-100">Thanh
+                                toán</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- mổ tả sản phẩm: 4 tabs Thông tin sản phẩm, Hướng dẫn mua hàng, Chính sách đổi trả, Hướng dẫn bảo quản -->
+            <div class="row">
+                <!-- 4 tabs Thông tin sản phẩm, Hướng dẫn mua hàng, Chính sách đổi trả, Hướng dẫn bảo quản-->
+                <ul class="nav nav-pills nav-fill mb-3 mt-5" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">Thông tin sản phẩm</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-jacket-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-jacket" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Hướng dẫn mua hàng</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-cardigan-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-cardigan" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Chính sách đổi trả</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-hoodie-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-hoodie" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Hướng dẫn bảo quản</button>
+                    </li>
+
+                </ul>
+                <!-- thông tin từng tab -->
+                <div class="tab-content" id="pills-tabContent">
+                    <!-- tab thông tin sản phẩm -->
+                    <div class="tab-pane fade show active" id="pills-all" role="tabpanel"
+                        aria-labelledby="pills-all-tab" tabindex="0">
+                        <div class="row">
+                            <p><strong>Size Charts:</strong></p>
+                            <p>Size M: dài 72 cm - ngang 70 cm Size M fit 1m55 tới 1m7</p>
+                            <br>
+                            <p>Size L: dài 74 cm - ngang 72 cm. Size L fit trên 1m7</p>
+                        </div>
+                    </div>
+                    <!-- tab Hướng dẫn mua hàng -->
+                    <div class="tab-pane fade" id="pills-jacket" role="tabpanel" aria-labelledby="pills-jacket-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <p><strong>Bước 1: </strong>Truy cập website và lựa chọn sản phẩm cần mua để mua hàng</p>
+
+                            <p><strong>Bước 2: </strong>Click và sản phẩm muốn mua, màn hình hiển thị ra pop up với các
+                                lựa chọn sau</p>
+                            <p>Nếu bạn muốn tiếp tục mua hàng: Bấm vào phần tiếp tục mua hàng để lựa chọn thêm sản phẩm
+                                vào giỏ hàng</p>
+                            <p>Nếu bạn muốn xem giỏ hàng để cập nhật sản phẩm: Bấm vào xem giỏ hàng</p>
+                            <p>Nếu bạn muốn đặt hàng và thanh toán cho sản phẩm này vui lòng bấm vào: Đặt hàng và thanh
+                                toán</p>
+
+                            <p><strong>Bước 3: </strong>Lựa chọn thông tin tài khoản thanh toán</p>
+                            <p>Nếu bạn đã có tài khoản vui lòng nhập thông tin tên đăng nhập là email và mật khẩu vào
+                                mục đã có tài khoản trên hệ thống</p>
+                            <p>Nếu bạn chưa có tài khoản và muốn đăng ký tài khoản vui lòng điền các thông tin cá nhân
+                                để tiếp tục đăng ký tài khoản. Khi có tài khoản bạn sẽ dễ dàng theo dõi được đơn hàng
+                                của mình</p>
+                            <p>Nếu bạn muốn mua hàng mà không cần tài khoản vui lòng nhấp chuột vào mục đặt hàng không
+                                cần tài khoản</p>
+
+                            <p><strong>Bước 4: </strong>Điền các thông tin của bạn để nhận đơn hàng, lựa chọn hình thức
+                                thanh toán và vận chuyển cho đơn hàng của mình</p>
+
+                            <p><strong>Bước 5: </strong>Xem lại thông tin đặt hàng, điền chú thích và gửi đơn hàng</p>
+                            <p>Sau khi nhận được đơn hàng bạn gửi chúng tôi sẽ liên hệ bằng cách gọi điện lại để xác
+                                nhận lại đơn hàng và địa chỉ của bạn.</p>
+                            <p>Trân trọng cảm ơn</p>
+
+                        </div>
+
+                    </div>
+                    <!-- tab Chính sách đổi trả -->
+                    <div class="tab-pane fade" id="pills-cardigan" role="tabpanel" aria-labelledby="pills-cardigan-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <p>Chính sách đổi trả:<br>
+                                1. Khi nhận hàng online, bạn vui lòng quay video unbox sản phẩm để được hỗ trợ đổi hàng.
+                                Đối với các đơn hàng offline, bạn vui lòng giữ lại tag và hoá đơn mua hàng để được hỗ
+                                trợ đổi hàng.
+                            </p>
+                            <p>2. Đối với sản phẩm mua trong đợt giảm giá:<br>
+                                &nbsp;+ Bạn sẽ được đổi sản phẩm khi hàng bị lỗi từ nhà sản xuất hoặc shop giao nhầm mẫu
+                                trong vòng 2 ngày&nbsp;
+                            </p>
+                            <p>3. Đối với sản phẩm mua ngoài đợt giảm giá:<br>
+                                + Bạn sẽ được đổi sản phẩm khi phát hiện lỗi từ nhà sản xuất/ shop giao thiếu hàng trong
+                                5 ngày từ khi nhận hàng.<br>
+                                + Bạn sẽ được đổi size sản phẩm trong vòng 2 ngày từ khi nhận hàng. ( Áp dụng đổi size
+                                với sản phẩm cùng loại )</p>
+                        </div>
+                    </div>
+                    <!-- Hướng dẫn bảo quản -->
+                    <div class="tab-pane fade" id="pills-hoodie" role="tabpanel" aria-labelledby="pills-hoodie-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <p>1.&nbsp;Hạn chế ngâm áo quá lâu trong nước</p>
+                            <p>2.&nbsp;Không giặt áo bằng nước nóng</p>
+                            <p>3.&nbsp;Không giặt / ngâm quần áo với nước tẩy</p>
+                            <p>4. Lật trái mặt áo khi là ủi, không ủi lên hình in/ thêu</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Các sản phẩm tương tự -->
+            <div class="row my-5">
+                <div class="col-12 text-center my-5">
+                    <h2 class="title-main text-uppercase">
+                        Các sản phẩm tương tự
+                    </h2>
+                </div>
+
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    29%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan0.jpg"
+                                alt="schoolknit-cardigan" class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Schoolknit Cardigan</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>179.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    29%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg" alt="ted-jacket-2"
+                                class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="ted-jacket.html">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Ted Jacket</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>299.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    39%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket0.jpg"
+                                alt="windbreaker-gorpcore-jacket" class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Windbreaker Gorpcore Jacket</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>239.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    34%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/JACKET/Racing Jacket.jpg" alt="Racing Jacket"
+                                class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Racing Jacket</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>249.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sản phẩm đã xem -->
+            <div class="row my-5">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="title-main text-uppercase">
+                        Sản phẩm đã xem
+                    </h2>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    39%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/HOODIES/script-hoodie0.jpg" alt="script-hoodie"
+                                class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Script Hoodie</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>229.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    39%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-0.jpg"
+                                alt="signature-zipup-hoodie" class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Signature Zipup Hoodie</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>229.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    49%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee0.jpg" alt="bloke-tee"
+                                class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Bloke Tee</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>149.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="col-lg-3 col-md-4 mb-3">
+                    <div class="product-box">
+                        <div class="product-inner-box position-relative">
+                            <div class="icons position-absolute">
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                        class="bi bi-eye"></i></a>
+                                <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+                            </div>
+                            <div class="onsale ">
+                                <span class="badge rounded-0">
+                                    <i class="bi bi-arrow-down"></i>
+                                    49%
+                                </span>
+                            </div>
+                            <img src="./assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee0.jpg"
+                                alt="cities-ball-tee" class="img-fluid">
+                            <div class="cart-btn">
+                                <a href="">
+                                    <button class="btn btn-outline-dark shadow-sm rounded-pill"><i
+                                            class="bi bi-cart2"></i>
+                                        Xem chi tiết</button>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">
+                                <h4 class="mt-3 mb-2">Cities Ball Tee</h4>
+                            </div>
+                            <div class="product-price">
+                                <span>149.000 VND</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Nhận thông tin khuyến mãi -->
+    <div class="container-fluid bg-black">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-lg-6 col-md-12 mt-2">
+                    <h4 class="text-uppercase text-white">Nhận thông tin khuyến mãi từ chúng tôi</h4>
+                </div>
+                <div class="col-lg-6 col-md-12">
+
+                    <form action="">
+                        <div class="form-group d-flex">
+
+                            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId"
+                                placeholder="abc@mail.com" style="border-radius: 0px">
+                            <button class="btn btn-outline-light" type="button" style="border-radius: 0px">Gửi</button>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-light pt-5">
+        <div class="container">
+            <div class="row  g-4" style="border-bottom: 1px solid #333;">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand " href="index.html">
+                        <img src="./assets/img/symbolic logo.png" alt="" width="200px">
+                    </a>
+                    <p class=" text-muted mt-3" style="text-align: justify">Chúng tôi cung cấp các sản phẩm quần áo thân
+                        thiện môi trường, cam kết sử dụng nguyên liệu tái chế và tiết kiệm năng lượng trong sản xuất.
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3 ps-lg-5">
+                    <h5 class="fw-semibold">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="my-3">
+                            <a href="./index.html" class=" text-decoration-none text-muted">
+                                <i class="bi bi-chevron-compact-right"></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="./ALL.html" class=" text-decoration-none text-muted">
+                                <i class="bi bi-chevron-compact-right"></i> Sản phẩm
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="#" class=" text-decoration-none text-muted" data-bs-toggle="modal"
+                                data-bs-target="#frmdk">
+                                <i class="bi bi-chevron-compact-right"></i> Đăng ký
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="#" class=" text-decoration-none text-muted" data-bs-toggle="modal"
+                                data-bs-target="#frmdn">
+                                <i class="bi bi-chevron-compact-right"></i> Đăng nhập
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-semibold mb-3">Liên hệ chúng tôi</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="bi bi-geo-alt-fill"></i></i>
+                        </span>
+                        <span class="fw-light">
+                            12 Nguyễn Văn Bảo, phường 4, <br>
+                            Gò Vấp, TPHCM
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
+                        <span class="fw-light">
+                            Symbolic@gmail.com
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
+                        <span class="fw-light">
+                            0522 714 555
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-semibold mb-3">Mạng xã hội</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li>
+                                <a href="#" class=" text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class=" text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class=" text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-tiktok"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class=" text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-pinterest"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <p class="text-center">&copy; Bản quyền thuộc về Symbolic | <b>Hành trình bền vững cùng thời trang của
+                        bạn</b></p>
+            </div>
+        </div>
+    </footer>
+    <!-- end -->
+    <!--Modal Dang Nhap-->
+
+    <div id="frmdn" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Đăng nhập</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Email</label><span class="text-danger">*</span>
+                        <input type="text" name="" id="user1" class="form-control" placeholder=""
+                            aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mật khẩu</label><span class="text-danger">*</span>
+                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <h6 class="text-dark">Quên mật khẩu ?</h6>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-dark form-control">Đăng nhập</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Dang ky-->
+    <div class="modal fade" id="frmdk" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đăng ký tài khoản</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="form-group">
+                            <label for="">Họ</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="ho" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+                            <span id="erho" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="ten" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+                            <span id="erten" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số điện thoại</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="sdt" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+                            <span id="ersdt" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="email" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+                            <span id="ermail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nhập mật khẩu</label><span class="text-danger">*</span>
+                            <input type="password" name="" id="pass" class="form-control" placeholder=""
+                                aria-describedby="helpId">
+                            <span id="erpass" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark form-control">Tạo tài khoản</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

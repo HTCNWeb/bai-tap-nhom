@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/bootstrap.css">
+    <link rel="stylesheet" href="./assets/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+    <script src="./assets/jquery-3.6.4.js"></script>
+    <!-- font awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
+    <!-- <link rel="stylesheet" href="./assets/all.css"> -->
+    <script src="./assets/popper.min.js"></script>
+    <script src="./assets/bootstrap.js"></script>
+    <link rel="stylesheet" href="./assets/font/stylesheet.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="./assets/custom.js"></script>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html" style="width: 20%;">
+                <img src="./assets/img/symbolic logo.png" alt="" width="100%" style="min-width: 150px;">
+            </a>
+            <div class="order-lg-2 nav-btns">
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-search" ></i>
+
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-bag"></i>
+
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-dark">2</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <i class="bi bi-person pe-0"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#frmdk">Đăng ký</a>
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#frmdn">Đăng nhập</a>
+                        </div>
+                </button>
+            </div>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="./ALL.html">ALL</a>
+                            <a class="dropdown-item" href="./VARSITY.html">VARSITY</a>
+                            <a class="dropdown-item" href="./HOODIES.html">HOODIES</a>
+                            <a class="dropdown-item" href="./JACKET.html">JACKET</a>
+                            <a class="dropdown-item" href="./CARDIGANS.html">CARDIGANS</a>
+                            <a class="dropdown-item" href="./T-SHIRTS-POLO-SHIRTS.html">T-SHIRTS & POLO-SHIRTS</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Tin tức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- cây thư mục breadcrumb -->
+    <div class="container">
+        <div class="row my-5">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb d-flex justify-content-center pt-3">
+                    <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item active text-uppercase" aria-current="page">varsity</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- body -->
+    <div class="container" >
+        <!--H2 Danh mục sản phẩm -->
+        <div class="row my-5">
+            <div class="col text-center">
+                <h2 class="title-main text-uppercase">
+                    varsity
+                </h2>
+            </div>
+        </div>
+        
+        <!-- Top sản phẩm bán chạy -->
+        <div class="row my-5">
+            <div class="col-lg-3 col-md-4 mb-3">
+                <div class="product-box">
+                    <div class="product-inner-box position-relative">
+                        <div class="icons position-absolute">
+                            <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle"><i
+                                    class="bi bi-eye"></i></a>
+                            <a href="#!" class="text-decoration-none btn btn-outline-dark rounded-circle">
+                                <i class="bi bi-gear"></i>
+                            </a>
+                        </div>
+                        <div class="onsale ">
+                            <span class="badge rounded-0">
+                                <i class="bi bi-arrow-down"></i>
+                                29%
+                            </span>
+                        </div>
+                        <img src="./assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg" alt="ted-jacket-2"
+                            class="img-fluid">
+                        <div class="cart-btn">
+                            <a href="ted-jacket.html">
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết</button>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">
+                            <h4 class="mt-3 mb-2">Ted Jacket</h4>
+                        </div>
+                        <div class="product-price">
+                            <span>299.000 VND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Nhận thông tin khuyến mãi -->
+    <div class="container-fluid bg-black">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-lg-6 col-md-12 mt-2">
+                    <h4 class="text-uppercase text-white">Nhận thông tin khuyến mãi từ chúng tôi</h4>
+                </div>
+                <div class="col-lg-6 col-md-12">
+
+                    <form action="">
+                        <div class="form-group d-flex">
+
+                            <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId"
+                                placeholder="abc@mail.com" style="border-radius: 0px">
+                            <button class="btn btn-outline-light" type="button" style="border-radius: 0px">Gửi</button>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class = "bg-light pt-5">
+        <div class = "container">
+            <div class = "row  g-4" style="border-bottom: 1px solid #333;">
+                <div class = "col-md-6 col-lg-3">
+                    <a class = "text-uppercase text-decoration-none brand " href = "index.html">
+                        <img src="./assets/img/symbolic logo.png" alt="" width="200px">
+                    </a>
+                    <p class = " text-muted mt-3" style="text-align: justify">Chúng tôi cung cấp các sản phẩm quần áo thân thiện môi trường, cam kết sử dụng nguyên liệu tái chế và tiết kiệm năng lượng trong sản xuất.</p>
+                </div>
+                <div class = "col-md-6 col-lg-3 ps-lg-5">
+                    <h5 class = "fw-semibold">Links</h5>
+                    <ul class = "list-unstyled">
+                        <li class = "my-3">
+                            <a href = "./index.html" class = " text-decoration-none text-muted">
+                                <i class="bi bi-chevron-compact-right"></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "./ALL.html" class = " text-decoration-none text-muted">
+                                <i class="bi bi-chevron-compact-right"></i> Sản phẩm
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "#" class = " text-decoration-none text-muted" data-bs-toggle="modal" data-bs-target="#frmdk">
+                                <i class="bi bi-chevron-compact-right" ></i> Đăng ký
+                            </a>
+                        </li>
+                        <li class = "my-3">
+                            <a href = "#" class = " text-decoration-none text-muted" data-bs-toggle="modal" data-bs-target="#frmdn">
+                                <i class="bi bi-chevron-compact-right" ></i> Đăng nhập
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class = "col-md-6 col-lg-3">
+                    <h5 class = "fw-semibold mb-3">Liên hệ chúng tôi</h5>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class="bi bi-geo-alt-fill"></i></i>
+                        </span>
+                        <span class = "fw-light">
+                            12 Nguyễn Văn Bảo, phường 4, <br>
+                            Gò Vấp, TPHCM
+                        </span>
+                    </div>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class="bi bi-envelope-fill"></i>
+                        </span>
+                        <span class = "fw-light">
+                            Symbolic@gmail.com
+                        </span>
+                    </div>
+                    <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class="bi bi-telephone-fill"></i>
+                        </span>
+                        <span class = "fw-light">
+                            0522 714 555
+                        </span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-3">
+                    <h5 class = "fw-semibold mb-3">Mạng xã hội</h5>
+                    <div>
+                        <ul class = "list-unstyled d-flex">
+                            <li>
+                                <a href = "#" class = " text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = " text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = " text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-tiktok"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href = "#" class = " text-decoration-none text-muted fs-4 me-4">
+                                    <i class="bi bi-pinterest"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <p class="text-center">&copy; Bản quyền thuộc về Symbolic | <b>Hành trình bền vững cùng thời trang của bạn</b></p>
+            </div>
+        </div>
+    </footer>
+    <!-- end -->
+    <!--Modal Dang Nhap-->
+    
+    <div id="frmdn" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Đăng nhập</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                      <label for="">Email</label><span class="text-danger">*</span>
+                      <input type="text" name="" id="user1" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Mật khẩu</label><span class="text-danger">*</span>
+                      <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    </div>
+                    <div class="form-group">
+                        <h6 class="text-dark">Quên mật khẩu ?</h6>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-dark form-control">Đăng nhập</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Dang ky-->
+    <div class="modal fade" id="frmdk" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title">Đăng ký tài khoản</h5>
+                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="form-group">
+                          <label for="">Họ</label><span class="text-danger">*</span>
+                          <input type="text" name="" id="ho" class="form-control" placeholder="" aria-describedby="helpId">
+                          <span id="erho" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="ten" class="form-control" placeholder="" aria-describedby="helpId">
+                            <span id="erten" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số điện thoại</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="sdt" class="form-control" placeholder="" aria-describedby="helpId">
+                            <span id="ersdt" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label><span class="text-danger">*</span>
+                            <input type="text" name="" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                            <span id="ermail" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nhập mật khẩu</label><span class="text-danger">*</span>
+                            <input type="password" name="" id="pass" class="form-control" placeholder="" aria-describedby="helpId" >
+                            <span id="erpass" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark form-control">Tạo tài khoản</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
