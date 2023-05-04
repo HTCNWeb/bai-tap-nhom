@@ -121,7 +121,7 @@ $(document).ready(function () {
 // nút tăng giảm trang chi tiết sản phẩm
 $(document).ready(function () {
     // Lấy đối tượng input và hai nút tăng/giảm
-    var input = document.querySelector(".form-control");
+    var input = document.querySelector(".input-soLuong");
     var btnDecrease = document.querySelector("#button-giam");
     var btnIncrease = document.querySelector("#button-tang");
 
@@ -166,7 +166,6 @@ $(document).ready(function () {
     var mainimg = document.getElementById("Main-Img");
     var smallimg = document.getElementsByClassName("small-img");
 
-    
     smallimg[0].onclick = function () {
         mainimg.src = smallimg[0].src;
     };
@@ -177,17 +176,14 @@ $(document).ready(function () {
         mainimg.src = smallimg[2].src;
     };
 
-    $('input[name="color"]').click(function (e) { 
+    $('input[name="color"]').click(function (e) {
         var pickColor = $('input[name="color"]:checked').val();
-        if (pickColor == "color-1"){
+        if (pickColor == "color-1") {
             mainimg.src = smallimg[0].src;
-        }
-        else if (pickColor == "color-2"){
+        } else if (pickColor == "color-2") {
             mainimg.src = smallimg[1].src;
-        }
-        else{
+        } else {
             mainimg.src = smallimg[2].src;
         }
-        
     });
 });
