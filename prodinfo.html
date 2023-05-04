@@ -53,7 +53,7 @@
         }
 
         .no-border-radius, .nav-pills .nav-link {
-            border-radius: 0px;
+            border-radius: 0;
         }
 
         input[type=number]::-webkit-outer-spin-button,
@@ -692,9 +692,9 @@
                 <form action="">
                     <div class="form-group d-flex">
 
-                        <input aria-describedby="emailHelpId" class="form-control" id="" name="" placeholder="abc@mail.com"
-                               style="border-radius: 0px" type="email">
-                        <button class="btn btn-outline-light" style="border-radius: 0px" type="button">Gửi</button>
+                        <input aria-describedby="emailHelpId" class="form-control" id="mail" name="" placeholder="abc@mail.com"
+                               style="border-radius: 0" type="email">
+                        <button class="btn btn-outline-light" style="border-radius: 0" type="button">Gửi</button>
 
 
                     </div>
@@ -747,7 +747,7 @@
                 <h5 class="fw-semibold mb-3">Liên hệ chúng tôi</h5>
                 <div class="d-flex justify-content-start align-items-start my-2 text-muted">
                         <span class="me-3">
-                            <i class="bi bi-geo-alt-fill"></i></i>
+                            <i class="bi bi-geo-alt-fill"></i>
                         </span>
                     <span class="fw-light">
                             12 Nguyễn Văn Bảo, phường 4, <br>
@@ -820,7 +820,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="">Email</label><span class="text-danger">*</span>
+                    <label for="user1">Email</label><span class="text-danger">*</span>
                     <input aria-describedby="helpId" class="form-control" id="user1" name="" placeholder=""
                            type="text">
                 </div>
@@ -853,31 +853,31 @@
             <div class="modal-body">
                 <div class="container-fluid">
                     <div class="form-group">
-                        <label for="">Họ</label><span class="text-danger">*</span>
+                        <label for="ho">Họ</label><span class="text-danger">*</span>
                         <input aria-describedby="helpId" class="form-control" id="ho" name="" placeholder=""
                                type="text">
                         <span class="text-danger" id="erho"></span>
                     </div>
                     <div class="form-group">
-                        <label for="">Tên</label><span class="text-danger">*</span>
+                        <label for="ten">Tên</label><span class="text-danger">*</span>
                         <input aria-describedby="helpId" class="form-control" id="ten" name="" placeholder=""
                                type="text">
                         <span class="text-danger" id="erten"></span>
                     </div>
                     <div class="form-group">
-                        <label for="">Số điện thoại</label><span class="text-danger">*</span>
+                        <label for="sdt">Số điện thoại</label><span class="text-danger">*</span>
                         <input aria-describedby="helpId" class="form-control" id="sdt" name="" placeholder=""
                                type="text">
                         <span class="text-danger" id="ersdt"></span>
                     </div>
                     <div class="form-group">
-                        <label for="">Email</label><span class="text-danger">*</span>
+                        <label for="email">Email</label><span class="text-danger">*</span>
                         <input aria-describedby="helpId" class="form-control" id="email" name="" placeholder=""
                                type="text">
                         <span class="text-danger" id="ermail"></span>
                     </div>
                     <div class="form-group">
-                        <label for="">Nhập mật khẩu</label><span class="text-danger">*</span>
+                        <label for="pass">Nhập mật khẩu</label><span class="text-danger">*</span>
                         <input aria-describedby="helpId" class="form-control" id="pass" name="" placeholder=""
                                type="password">
                         <span class="text-danger" id="erpass"></span>
