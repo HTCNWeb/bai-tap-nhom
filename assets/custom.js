@@ -1,6 +1,6 @@
 // hiện nút xem chi tiết sản phẩm khi hover
 $(document).ready(function () {
-    var cards = document.querySelectorAll(".product-box");
+    let cards = document.querySelectorAll(".product-box");
 
     [...cards].forEach((card) => {
         card.addEventListener("mouseover", function () {
@@ -118,72 +118,159 @@ $(document).ready(function () {
     });
 });
 
-// nút tăng giảm trang chi tiết sản phẩm
-$(document).ready(function () {
-    // Lấy đối tượng input và hai nút tăng/giảm
-    var input = document.querySelector(".input-soLuong");
-    var btnDecrease = document.querySelector("#button-giam");
-    var btnIncrease = document.querySelector("#button-tang");
 
-    // Định nghĩa hàm tăng giảm số lượng sản phẩm
-    function changeQuantity(delta) {
-        var value = parseInt(input.value);
-        if (isNaN(value)) {
-            value = 0;
+
+//trang chi tiết sản phẩm
+$(document).ready(function () {
+
+    if(window.location.pathname.includes("prodinfo")) {
+
+        //lấy dữ liệu và đắp vào trang
+        if(localStorage.data === 'undefined') {
+            window.location.href = "404.html";
         }
-        value += delta;
-        if (value < 0) {
-            value = 0;
+            let prodData = JSON.parse(localStorage.data);
+            [...document.getElementsByClassName("prodName")].forEach((elem) => {
+                elem.textContent = prodData.name;
+            });
+            [...document.getElementsByClassName("img1")].forEach((elem) => {
+                elem.src = prodData.imglink1;
+            });
+            [...document.getElementsByClassName("img2")].forEach((elem) => {
+                elem.src = prodData.imglink2;
+            });
+            [...document.getElementsByClassName("prodColor")].forEach((elem, index) => {
+                elem.textContent = prodData.color[index];
+            })
+
+        // nút tăng giảm số lượng trong trang chi tiết sản phẩm
+        // Lấy đối tượng input và hai nút tăng/giảm
+        let input = document.querySelector(".prodCount");
+        let btnDecrease = document.querySelector("#button-giam");
+        let btnIncrease = document.querySelector("#button-tang");
+
+        // Định nghĩa hàm tăng giảm số lượng sản phẩm
+        function changeQuantity(delta) {
+            let value = parseInt(input.value);
+            if (isNaN(value) || value === 1 && delta === -1) {
+                value = 1;
+            } else {
+                value += delta;
+                input.value = value;
+            }
         }
-        input.value = value;
+        // Thêm sự kiện click cho nút tăng và giảm
+        btnIncrease.addEventListener("click", function () {
+            changeQuantity(1);
+        });
+
+        btnDecrease.addEventListener("click", function () {
+            changeQuantity(-1);
+        });
+
+        // tắt cuộn chuột tăng giảm giá trị của input type number
+            let inputNumber = document.querySelector('input[type="number"]');
+            inputNumber.addEventListener(
+                "mousewheel",
+                function (e) {
+                    // Ngăn chặn sự kiện cuộn chuột mặc định của trình duyệt
+                    e.preventDefault();
+                },
+                { passive: false }
+            ); // Sử dụng {passive: false} để ngăn chặn một số trình duyệt tối ưu hiệu suất
+
+        // thay ảnh nhỏ sản phẩm thành ảnh chính khi click ảnh và color
+            let mainimg = document.getElementById("Main-Img");
+            let smallimg = document.getElementsByClassName("small-img");
+
+            smallimg[0].onclick = function () {
+                mainimg.src = smallimg[0].src;
+            };
+            smallimg[1].onclick = function () {
+                mainimg.src = smallimg[1].src;
+            };
+
+            $('input[name="color"]').click(function (e) {
+                let pickColor = $('input[name="color"]:checked').val();
+                if (pickColor == "color-1") {
+                    mainimg.src = smallimg[0].src;
+                } else if (pickColor == "color-2") {
+                    mainimg.src = smallimg[1].src;
+                } else {
+                    mainimg.src = smallimg[2].src;
+                }
+            });
     }
-
-    // Thêm sự kiện click cho nút tăng và giảm
-    btnIncrease.addEventListener("click", function () {
-        changeQuantity(1);
-    });
-
-    btnDecrease.addEventListener("click", function () {
-        changeQuantity(-1);
-    });
 });
 
-// tắt cuộn chuột tăng giảm giá trị của input type number
-$(document).ready(function () {
-    var inputNumber = document.querySelector('input[type="number"]');
-    inputNumber.addEventListener(
-        "mousewheel",
-        function (e) {
-            // Ngăn chặn sự kiện cuộn chuột mặc định của trình duyệt
-            e.preventDefault();
+//preload data vào localStorage
+function loadData(nameSP) {
+    let data = [
+        //varsity
+        {
+            name: "Ted Jacket",
+            price: "299.000 VND",
+            color: ["Blue", "Gray"],
+            imglink1: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg",
+            imglink2: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-1.jpg",
         },
-        { passive: false }
-    ); // Sử dụng {passive: false} để ngăn chặn một số trình duyệt tối ưu hiệu suất
-});
-
-// thay ảnh nhỏ sản phẩm thành ảnh chính khi click ảnh và color
-$(document).ready(function () {
-    var mainimg = document.getElementById("Main-Img");
-    var smallimg = document.getElementsByClassName("small-img");
-
-    smallimg[0].onclick = function () {
-        mainimg.src = smallimg[0].src;
-    };
-    smallimg[1].onclick = function () {
-        mainimg.src = smallimg[1].src;
-    };
-    smallimg[2].onclick = function () {
-        mainimg.src = smallimg[2].src;
-    };
-
-    $('input[name="color"]').click(function (e) {
-        var pickColor = $('input[name="color"]:checked').val();
-        if (pickColor == "color-1") {
-            mainimg.src = smallimg[0].src;
-        } else if (pickColor == "color-2") {
-            mainimg.src = smallimg[1].src;
-        } else {
-            mainimg.src = smallimg[2].src;
+        //hoodie
+        {
+            name: "Script Hoodie",
+            price: "229.000 VND",
+            color: ["Black", "Grey"],
+            imglink1: "assets/img/danhmucsanpham/HOODIES/script-hoodie0.jpg",
+            imglink2: "assets/img/danhmucsanpham/HOODIES/script-hoodie1.jpg",
+        },
+        {
+            name: "Signature Zipup Hoodie",
+            price: "229.000 VND",
+            color: ["Grey", "Black"],
+            imglink1: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-0.jpg",
+            imglink2: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-1.jpg",
+        },
+        //jacket
+        {
+            name: "Windbreaker Gorpcore Jacket",
+            price: "239.000 VND",
+            color: ["Black", "White"],
+            imglink1: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket0.jpg",
+            imglink2: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket1.jpg",
+        },
+        {
+            name: "Sporty Jacket",
+            price: "249.000 VND",
+            color: ["Black Grey", "White Red"],
+            imglink1: "assets/img/danhmucsanpham/JACKET/sporty-jacket0.jpg",
+            imglink2: "assets/img/danhmucsanpham/JACKET/sporty-jacket1.jpg",
+        },
+        //cardigan
+        {
+            name: "Schoolknit Cardigan",
+            price: "179.000 VND",
+            color: ["Grey", "Cream White"],
+            imglink1: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan1.jpg",
+            imglink2: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan3.jpg",
+        },
+        //tshirts
+        {
+            name: "Bloke Tee",
+            price: "149.000 VND",
+            color: ["Black", "White"],
+            imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee0.jpg",
+            imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee1.jpg",
+        },
+        {
+            name: "Cities Ball Tee",
+            price: "149.000 VND",
+            color: ["White", "Light Blue"],
+            imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee1.jpg",
+            imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee2.jpg",
         }
-    });
-});
+    ];
+    //clear temp
+    localStorage.clear();
+    //load new
+    let result = data.find((item) => item.name === nameSP);
+    localStorage.setItem("data", JSON.stringify(result));
+}
