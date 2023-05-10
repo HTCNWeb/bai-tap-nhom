@@ -75,27 +75,27 @@
 
         <div class="order-lg-2 nav-btns">
             <!-- Button trigger modal -->
-            <button type="button" class="btn position-relative" data-bs-toggle="modal"
-                data-bs-target="#searchModal">
+            <button class="btn position-relative" data-bs-target="#searchModal" data-bs-toggle="modal"
+                    type="button">
                 <i class="bi bi-search"></i>
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
-                aria-hidden="true">
+            <div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal fade" id="searchModal"
+                 tabindex="-1">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="searchModalLabel">Tìm kiếm sản phẩm</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
+                            <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"
+                                    type="button"></button>
                         </div>
                         <div class="modal-body">
                             <form action="./search.html" method="GET">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="" name="search"
-                                        aria-label="Tìm kiếm" aria-describedby="search-addon">
-                                    <button class="btn btn-dark" type="submit" id="search-addon">Tìm kiếm</button>
+                                    <input aria-describedby="search-addon" aria-label="Tìm kiếm" class="form-control" name="search"
+                                           placeholder="" type="text">
+                                    <button class="btn btn-dark" id="search-addon" type="submit">Tìm kiếm</button>
                                 </div>
                             </form>
                         </div>
@@ -130,7 +130,8 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                       data-bs-toggle="dropdown"
                        href="#" id="dropdownId">Sản phẩm</a>
                     <div aria-labelledby="dropdownId" class="dropdown-menu">
                         <a class="dropdown-item" href="ALL.html">ALL</a>
@@ -196,11 +197,12 @@
             <!-- thông tin sản phẩm -->
             <div class="col-lg-6 col-md-12 px-3">
                 <div class="row border-bottom">
-                    <h2 class="pt-5 prodName" ></h2>
+                    <h2 class="pt-5 prodName"></h2>
                     <h3 class="py-3 prodPrice"></h3>
                     <div class="py-3">
                         <div aria-label="Basic radio toggle button group" class="btn-group" role="group">
-                            <input autocomplete="off" checked class="btn-check" id="size-M" name="size" type="radio" value="M">
+                            <input autocomplete="off" checked class="btn-check" id="size-M" name="size" type="radio"
+                                   value="M">
                             <label class="btn btn-outline-dark label-size" for="size-M">M</label>
 
                             <input autocomplete="off" class="btn-check" id="size-L" name="size" type="radio" value="L">
@@ -213,7 +215,8 @@
                                    type="radio" value="color-1">
                             <label class="btn btn-outline-dark label-color prodColor" for="color-1"></label>
 
-                            <input autocomplete="off" class="btn-check" id="color-2" name="color" type="radio" value="color-2">
+                            <input autocomplete="off" class="btn-check" id="color-2" name="color" type="radio"
+                                   value="color-2">
                             <label class="btn btn-outline-dark label-color prodColor" for="color-2"></label>
 
                         </div>
@@ -243,7 +246,8 @@
                                         type="button">-
                                 </button>
                             </div>
-                            <input aria-describedby="button-addon1" aria-label="Số lượng" class="form-control text-center prodCount"
+                            <input aria-describedby="button-addon1" aria-label="Số lượng"
+                                   class="form-control text-center prodCount"
                                    minlength="0" style="border: 1px solid black;" type="number" value="1">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-dark no-border-radius" id="button-tang"
@@ -253,12 +257,14 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 py-3">
-                        <button class="btn btn-outline-dark no-border-radius w-100" type="button" onclick="addCart()">Thêm vào giỏ
+                        <button class="btn btn-outline-dark no-border-radius w-100" onclick="addCart()" type="button">
+                            Thêm vào giỏ
                             hàng
                         </button>
                     </div>
                     <div class="col-lg-6 col-md-12 py-3">
-                        <button class="btn btn-outline-dark no-border-radius w-100" type="button" onclick="window.location.href='checkout.html'">Thanh
+                        <button class="btn btn-outline-dark no-border-radius w-100" onclick="window.location.href='checkout.html'"
+                                type="button">Thanh
                             toán
                         </button>
                     </div>
@@ -403,8 +409,10 @@
                              class="img-fluid" src="assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html?product=Schoolknit%20Cardigan">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Schoolknit Cardigan')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Schoolknit Cardigan')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -440,8 +448,10 @@
                              src="assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Ted Jacket')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Ted Jacket')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -477,8 +487,10 @@
                              class="img-fluid" src="assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Windbreaker Gorpcore Jacket')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Windbreaker Gorpcore Jacket')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -513,8 +525,10 @@
                              src="assets/img/danhmucsanpham/JACKET/sporty-jacket0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Sporty Jacket')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Sporty Jacket')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -557,8 +571,10 @@
                              src="assets/img/danhmucsanpham/HOODIES/script-hoodie0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Script Hoodie')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Script Hoodie')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -594,8 +610,10 @@
                              class="img-fluid" src="assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Signature Zipup Hoodie')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Signature Zipup Hoodie')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -631,8 +649,10 @@
                              src="assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Bloke Tee')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Bloke Tee')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -665,11 +685,14 @@
                                 </span>
                         </div>
                         <img alt="cities-ball-tee"
-                             class="img-fluid" src="assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee0.jpg">
+                             class="img-fluid"
+                             src="assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee0.jpg">
                         <div class="cart-btn">
                             <a href="prodinfo.html">
-                                <button class="btn btn-outline-dark shadow-sm rounded-pill" onclick="loadData('Cities Ball Tee')" ><i class="bi bi-cart2"></i>
-                                    Xem chi tiết</button>
+                                <button class="btn btn-outline-dark shadow-sm rounded-pill"
+                                        onclick="loadData('Cities Ball Tee')"><i class="bi bi-cart2"></i>
+                                    Xem chi tiết
+                                </button>
                             </a>
                         </div>
 
@@ -700,7 +723,8 @@
                 <form action="">
                     <div class="form-group d-flex">
 
-                        <input aria-describedby="emailHelpId" class="form-control" id="mail" name="" placeholder="abc@mail.com"
+                        <input aria-describedby="emailHelpId" class="form-control" id="mail" name=""
+                               placeholder="abc@mail.com"
                                style="border-radius: 0" type="email">
                         <button class="btn btn-outline-light" style="border-radius: 0" type="button">Gửi</button>
 

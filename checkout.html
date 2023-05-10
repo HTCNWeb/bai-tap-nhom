@@ -1,176 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Thanh toán</title>
 
-    <link rel="stylesheet" href="./assets/bootstrap.css">
-    <link rel="stylesheet" href="./assets/bootstrap-icons-1.10.4/font/bootstrap-icons.css">
+    <link href="./assets/bootstrap.css" rel="stylesheet">
+    <link href="./assets/bootstrap-icons-1.10.4/font/bootstrap-icons.css" rel="stylesheet">
     <script src="./assets/jquery-3.6.4.js"></script>
     <!-- font awesome -->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/> -->
     <!-- <link rel="stylesheet" href="./assets/all.css"> -->
     <script src="./assets/popper.min.js"></script>
     <script src="./assets/bootstrap.js"></script>
-    <link rel="stylesheet" href="./assets/font/stylesheet.css">
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link href="./assets/font/stylesheet.css" rel="stylesheet">
+    <link href="./assets/styles.css" rel="stylesheet">
     <script src="./assets/custom.js"></script>
+    <script src="./assets/thanhtoan.js"></script>
 
-<style>
-    nav {
-    position: relative;
-}
+    <style>
+        nav {
+            position: relative;
+        }
 
-    .navbar-brand {
-    position: absolute;
-    left: 50%;
-    top: 30px;
-    transform: translateX(-50%);
-}
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+        }
 
-    #qr-code {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
+        #qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
 
-    #countdown {
-    font-size: 24px;
-    text-align: center;
-    margin-top: 20px;
-}
-</style>
+        #countdown {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 
 </head>
 
 <body>
 
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="./index.html" style="width: 20%;">
-                    <img src="./assets/img/symbolic logo.png" alt="" width="100%" style="min-width: 150px;">
-                </a>
-        
-                <div class="container">
-                    <div class="py-5 text-center">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 order-md-2 mb-4">
-                            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="text-muted">Giỏ hàng của bạn</span>
-                                <span class="cartSize" style="vertical-align: inherit;"></span>
-                            </h4>
-                            <ul class="list-group mb-3 sticky-top checkoutInfo">
-<!--//sp goes here-->
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="./index.html" style="width: 20%;">
+            <img alt="" src="./assets/img/symbolic logo.png" style="min-width: 150px;" width="100%">
+        </a>
 
-                            </ul>
+        <div class="container">
+            <div class="py-5 text-center">
+            </div>
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Giỏ hàng của bạn</span>
+                        <span class="cartSize" style="vertical-align: inherit;"></span>
+                    </h4>
+                    <ul class="list-group mb-3 sticky-top checkoutInfo">
+                        <!--//sp goes here-->
+
+                    </ul>
+                </div>
+                <div class="col-md-8 order-md-1">
+                    <h3 class="mb-3">Thông tin thanh toán</h3>
+                    <form class="needs-validation" novalidate="">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Tên</label>
+                                <input class="form-control" id="firstName" placeholder="" required="" type="text"
+                                       value="">
+                                <div class="invalid-feedback">Bắt buộc phải có tên hợp lệ.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Họ</label>
+                                <input class="form-control" id="lastName" placeholder="" required="" type="text"
+                                       value="">
+                                <div class="invalid-feedback">Bắt buộc phải có họ hợp lệ.</div>
+                            </div>
                         </div>
-                        <div class="col-md-8 order-md-1">
-                            <h3 class="mb-3">Thông tin thanh toán</h3>
-                            <form class="needs-validation" novalidate="">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="firstName">Tên</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                                        <div class="invalid-feedback">Bắt buộc phải có tên hợp lệ. </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="lastName">Họ</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                                        <div class="invalid-feedback">Bắt buộc phải có họ hợp lệ. </div>
-                                    </div>
+                        <div class="mb-3">
+                            <label for="username">Tên tài khoản</label>
+                            <div class="input-group">
+                                <input class="form-control" id="username" required="" type="text">
+                                <div class="invalid-feedback" style="width: 100%;"> Tên người dùng của bạn là bắt
+                                    buộc.
                                 </div>
-                                <div class="mb-3">
-                                    <label for="username">Tên tài khoản</label>
-                                    <div class="input-group">             
-                                        <input type="text" class="form-control" id="username" required="">
-                                        <div class="invalid-feedback" style="width: 100%;"> Tên người dùng của bạn là bắt buộc. </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="sdt">Số điện thoại</label>
-                                    <input type="email" class="form-control" id="sdt">
-                                    <div class="invalid-feedback"> Vui lòng nhập số điện thoại hợp lệ. </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email">
-                                    <div class="invalid-feedback"> Vui lòng nhập địa chỉ email hợp lệ để cập nhật thông tin vận chuyển. </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address">Địa chỉ</label>
-                                    <input type="text" class="form-control" id="address" required="">
-                                    <div class="invalid-feedback"> Vui lòng nhập địa chỉ vận chuyển của bạn. </div>
-                                </div>
-                                <div class="mb-4">
-                                    <label for="address2">Địa chỉ 2</label>
-                                    <input type="text" class="form-control" id="address2">
-                                </div>
-                                <div class="mb-4"> 
-                                    <textarea style="width: 100%; height: 130px;" name="note" id="note" class="field__input" data-bind="note" placeholder="Ghi chú"></textarea>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-5 mb-4">
-                                        <label for="country">Quốc gia</label>
-                                        <select class="custom-select d-block w-100" id="country" required="">
-                                            <option value="">Chọn...</option>
-                                            <option>Viet Nam</option>
-                                            <option>Lao</option>
-                                            <option>Campuchia</option>
-                                            <option>Singapore</option>
-                                            <option>Malaysia</option>
-                                            <option>ThaiLand</option>
-                                            <option>Korea</option>
-                                            <option>Japan</option>
-                                        </select>
-                                        <div class="invalid-feedback"> Vui lòng chọn một quốc gia hợp lệ. </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sdt">Số điện thoại</label>
+                            <input class="form-control" id="sdt" type="email">
+                            <div class="invalid-feedback"> Vui lòng nhập số điện thoại hợp lệ.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input class="form-control" id="email" type="email">
+                            <div class="invalid-feedback"> Vui lòng nhập địa chỉ email hợp lệ để cập nhật thông tin vận
+                                chuyển.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address">Địa chỉ</label>
+                            <input class="form-control" id="address" required="" type="text">
+                            <div class="invalid-feedback"> Vui lòng nhập địa chỉ vận chuyển của bạn.</div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="address2">Địa chỉ 2</label>
+                            <input class="form-control" id="address2" type="text">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="field__input" data-bind="note" id="note" name="note"
+                                      placeholder="Ghi chú" style="width: 100%; height: 130px;"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 mb-4">
+                                <label for="country">Quốc gia</label>
+                                <select class="custom-select d-block w-100" id="country" required="">
+                                    <option value="">Chọn...</option>
+                                    <option>Viet Nam</option>
+                                    <option>Lao</option>
+                                    <option>Campuchia</option>
+                                    <option>Singapore</option>
+                                    <option>Malaysia</option>
+                                    <option>ThaiLand</option>
+                                    <option>Korea</option>
+                                    <option>Japan</option>
+                                </select>
+                                <div class="invalid-feedback"> Vui lòng chọn một quốc gia hợp lệ.</div>
+                            </div>
 
-                                <hr class="mb-4">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="same-address">
-                                    <label class="custom-control-label" for="same-address">Địa chỉ giao hàng giống với địa chỉ thanh toán của tôi</label>
+                            <hr class="mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="same-address" type="checkbox">
+                                <label class="custom-control-label" for="same-address">Địa chỉ giao hàng giống với địa
+                                    chỉ thanh toán của tôi</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" id="save-info" type="checkbox">
+                                <label class="custom-control-label" for="save-info">Lưu thông tin này cho lần
+                                    sau</label>
+                            </div>
+                            <hr class="mb-5">
+                        </div>
+                        <section class="section">
+                            <div class="section__header">
+                                <div class="layout-flex">
+                                    <h2 class="section__title layout-flex__item layout-flex__item--stretch">
+                                        <i class="fa fa-credit-card fa-lg section__title--icon hide-on-desktop"></i>
+                                        Thanh toán trực tiếp
+                                    </h2>
                                 </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="save-info">
-                                    <label class="custom-control-label" for="save-info">Lưu thông tin này cho lần sau</label>
-                                </div>
-                                <hr class="mb-5">
-                                
-                                <section class="section">
-									<div class="section__header">
-										<div class="layout-flex">
-											<h2 class="section__title layout-flex__item layout-flex__item--stretch">
-												<i class="fa fa-credit-card fa-lg section__title--icon hide-on-desktop"></i>
-												Thanh toán trực tiếp 
-											</h2>
-										</div>
-									</div>
-									<div>
+                            </div>
+                        </section>
+                        <div class="payment-options">
+                            <label for="payment-cod">
+                                <input id="payment-cod" name="payment-method" type="radio" value="cod"> Thanh toán khi
+                                giao hàng (COD)
+                            </label>
+                            <br>
+                            <br>
+                            <div class="payment-info payment-cod-info" style="display:none;">
+                                Bạn chỉ cần thanh toán khi nhận được hàng
+                            </div>
+                        </div>
+                        <a class="btn btn-primary btn-lg btn-block" href="index.html"
+                           onclick="alert(`Thanh toán thành công. Cảm ơn bạn đã mua hàng tại Symbolic!`)">Thanh toán</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
 
-                                <div class="payment-options">
-                                    <label for="payment-cod">
-                                      <input type="radio" id="payment-cod" name="payment-method" value="cod"> Thanh toán khi giao hàng (COD)
-                                    </label>
-                                  </div>
-                                  <br>
-                                  <br>
-                                  <div class="payment-info payment-cod-info" style="display:none;">
-                                    Bạn chỉ cần thanh toán khi nhận được hàng
-                                  </div>
-                                  <a class="btn btn-primary btn-lg btn-block" href="index.html" onclick="alert(`Thanh toán thành công. Cảm ơn bạn đã mua hàng tại Symbolic!`)">Thanh toán</a>
-                              </form>
-                          </div>
-                      </div>
-                      <footer class="my-5 pt-5 text-muted text-center text-small">                                               
-                      </footer>     
-
-                    
-    <script src="./assets/thanhtoan.js"></script>                                                  
+<footer class="my-5 pt-5 text-muted text-center text-small">
+</footer>
 </body>
 
 </html>
