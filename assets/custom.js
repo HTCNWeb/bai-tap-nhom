@@ -118,11 +118,73 @@ $(document).ready(function () {
     });
 });
 
-
+//database sản phẩm
+let data = [
+    //varsity
+    {
+        name: "Ted Jacket",
+        price: "299.000 VND",
+        color: ["Blue", "Gray"],
+        imglink1: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg",
+        imglink2: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-1.jpg",
+    },
+    //hoodie
+    {
+        name: "Script Hoodie",
+        price: "229.000 VND",
+        color: ["Black", "Grey"],
+        imglink1: "assets/img/danhmucsanpham/HOODIES/script-hoodie0.jpg",
+        imglink2: "assets/img/danhmucsanpham/HOODIES/script-hoodie1.jpg",
+    },
+    {
+        name: "Signature Zipup Hoodie",
+        price: "229.000 VND",
+        color: ["Grey", "Black"],
+        imglink1: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-0.jpg",
+        imglink2: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-1.jpg",
+    },
+    //jacket
+    {
+        name: "Windbreaker Gorpcore Jacket",
+        price: "239.000 VND",
+        color: ["Black", "White"],
+        imglink1: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket0.jpg",
+        imglink2: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket1.jpg",
+    },
+    {
+        name: "Sporty Jacket",
+        price: "249.000 VND",
+        color: ["Black Grey", "White Red"],
+        imglink1: "assets/img/danhmucsanpham/JACKET/sporty-jacket0.jpg",
+        imglink2: "assets/img/danhmucsanpham/JACKET/sporty-jacket1.jpg",
+    },
+    //cardigan
+    {
+        name: "Schoolknit Cardigan",
+        price: "179.000 VND",
+        color: ["Grey", "Cream White"],
+        imglink1: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan1.jpg",
+        imglink2: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan3.jpg",
+    },
+    //t-shirts
+    {
+        name: "Bloke Tee",
+        price: "149.000 VND",
+        color: ["Black", "White"],
+        imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee0.jpg",
+        imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee1.jpg",
+    },
+    {
+        name: "Cities Ball Tee",
+        price: "149.000 VND",
+        color: ["White", "Light Blue"],
+        imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee1.jpg",
+        imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee2.jpg",
+    }
+];
 
 //trang chi tiết sản phẩm
 $(document).ready(function () {
-
     if(window.location.pathname.includes("prodinfo")) {
 
         //lấy dữ liệu và đắp vào trang
@@ -132,6 +194,9 @@ $(document).ready(function () {
             let prodData = JSON.parse(localStorage.data);
             [...document.getElementsByClassName("prodName")].forEach((elem) => {
                 elem.textContent = prodData.name;
+            });
+            [...document.getElementsByClassName("prodPrice")].forEach((elem) => {
+                elem.textContent = prodData.price;
             });
             [...document.getElementsByClassName("img1")].forEach((elem) => {
                 elem.src = prodData.imglink1;
@@ -201,76 +266,76 @@ $(document).ready(function () {
                 }
             });
     }
+
+
+
 });
 
 //preload data vào localStorage
 function loadData(nameSP) {
-    let data = [
-        //varsity
-        {
-            name: "Ted Jacket",
-            price: "299.000 VND",
-            color: ["Blue", "Gray"],
-            imglink1: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-0.jpg",
-            imglink2: "assets/img/danhmucsanpham/VARSITY/ted-jacket-2-1.jpg",
-        },
-        //hoodie
-        {
-            name: "Script Hoodie",
-            price: "229.000 VND",
-            color: ["Black", "Grey"],
-            imglink1: "assets/img/danhmucsanpham/HOODIES/script-hoodie0.jpg",
-            imglink2: "assets/img/danhmucsanpham/HOODIES/script-hoodie1.jpg",
-        },
-        {
-            name: "Signature Zipup Hoodie",
-            price: "229.000 VND",
-            color: ["Grey", "Black"],
-            imglink1: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-0.jpg",
-            imglink2: "assets/img/danhmucsanpham/HOODIES/signature-zipup-hoodie-1-1.jpg",
-        },
-        //jacket
-        {
-            name: "Windbreaker Gorpcore Jacket",
-            price: "239.000 VND",
-            color: ["Black", "White"],
-            imglink1: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket0.jpg",
-            imglink2: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket1.jpg",
-        },
-        {
-            name: "Sporty Jacket",
-            price: "249.000 VND",
-            color: ["Black Grey", "White Red"],
-            imglink1: "assets/img/danhmucsanpham/JACKET/sporty-jacket0.jpg",
-            imglink2: "assets/img/danhmucsanpham/JACKET/sporty-jacket1.jpg",
-        },
-        //cardigan
-        {
-            name: "Schoolknit Cardigan",
-            price: "179.000 VND",
-            color: ["Grey", "Cream White"],
-            imglink1: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan1.jpg",
-            imglink2: "assets/img/danhmucsanpham/CARDIGANS/schoolknit-cardigan3.jpg",
-        },
-        //tshirts
-        {
-            name: "Bloke Tee",
-            price: "149.000 VND",
-            color: ["Black", "White"],
-            imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee0.jpg",
-            imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee1.jpg",
-        },
-        {
-            name: "Cities Ball Tee",
-            price: "149.000 VND",
-            color: ["White", "Light Blue"],
-            imglink1: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee1.jpg",
-            imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee2.jpg",
-        }
-    ];
-    //clear temp
-    localStorage.clear();
     //load new
     let result = data.find((item) => item.name === nameSP);
     localStorage.setItem("data", JSON.stringify(result));
 }
+
+function addCart() {
+    //get sản phẩm có sẵn trong data
+    let prodData = JSON.parse(localStorage.data);
+    let checkColor = $('input[name="color"]:checked').val();
+    let color = (checkColor === 'color-1') ? prodData.color[0] : prodData.color[1];
+    let size = $('input[name="size"]:checked').val();
+    let quantity = $('.prodCount')[0].value;
+    let cartDB = JSON.parse(localStorage.cart);
+    let prod = {
+        "imgLink": (checkColor === 'color-1') ? prodData.imglink1 : prodData.imglink2,
+        "prodNameOnly": `prodData.name`,
+        "prodName": `${prodData.name}\n${size} / ${color}`,
+        "prodPrice": prodData.price,
+        "prodQuantity": quantity
+    }
+    let checkDup = cartDB.find((product) => product.prodName.includes(prodData.name))
+    if(checkDup && checkDup.prodQuantity !== quantity) {
+        checkDup.prodQuantity = quantity;
+    } else {
+        cartDB.push(prod);
+    }
+    localStorage.setItem("cart", JSON.stringify(cartDB));
+    alert("Thêm sản phẩm vào giỏ hàng thành công!");
+}
+
+//trang giỏ hàng
+$(document).ready(function () {
+    if (window.location.pathname.includes("cart")) {
+        let listSP = document.getElementsByClassName('cartList')[0];
+        let cartDB = JSON.parse(localStorage.cart);
+        cartDB.forEach(function(element) {
+            let prodString = `<tr><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center"><img class="img-thumbnail" src=${element.imgLink} alt="" width="100px" height="100px"></div></td><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center"><div class=""><h5><a class="text-decoration-none text-dark" href="#">${element.prodName}</a></h5></div></div></td><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center">${element.prodPrice}</div></td><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center"><div class="input-group group-soLuong"><div class="input-group-prepend"><button class="btn btn-outline-dark no-border-radius" type="button" id="decrease-quantity2">-</button></div><input style="border: 1px solid black;" type="number" class="form-control text-center" aria-label="Số lượng" aria-describedby="button-addon1" value=${element.prodQuantity} minlength="0" id="quantity2" name="quantity2"><div class="input-group-append"><button class="btn btn-outline-dark no-border-radius" type="button" id="increase-quantity2">+</button></div></div></div></td><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center">${(parseFloat(element.prodPrice.replace(/[^\d.-]/g, '').replace('.', ''))*element.prodQuantity).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', 'VND')}</div></td><td><div style="height: 120px;" class="d-flex justify-content-center align-items-center"><button class="btn btn-default" onclick="deleteRow(this, '${element.prodNameOnly}')"><i class="bi bi-trash-fill"></i></button></div></td></tr>`
+            listSP.innerHTML += prodString;
+        });
+
+    }
+})
+
+function deleteRow(btn, nameSP) {
+    console.log(btn)
+    let row = btn.closest('tr');
+    let cartDB = JSON.parse(localStorage.cart);
+    let index = cartDB.findIndex(function(item) {
+        return item.prodNameOnly === nameSP;
+    });
+    if(index !== -1) {
+        cartDB.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cartDB));
+    }
+    row.parentNode.removeChild(row);
+}
+
+
+//global functions
+$(document).ready(function () {
+    let cartDB = JSON.parse(localStorage.cart);
+    let cart = $(".cartSize")
+    if(cartDB.length > 0) {
+        cart.html(cartDB.length);
+    }
+})
