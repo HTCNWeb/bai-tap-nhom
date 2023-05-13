@@ -168,6 +168,7 @@ h6 {
 /* ==================================================== */
 /* Box Sản phẩm */
 
+/* cho 2 icon nằm dọc */
 .product-inner-box .icons {
     display: flex;
     /* align-items: flex-end; */
@@ -180,6 +181,7 @@ h6 {
     opacity: 0;
 }
 
+/* làm border của icon tròn hơn */
 .product-inner-box .icons a {
     width: 40px;
     height: 40px;
