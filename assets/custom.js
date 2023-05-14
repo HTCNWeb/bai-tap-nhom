@@ -1,7 +1,9 @@
-//database sản phẩm
+//preload data vào localStorage
 let data = [
     //varsity
     {
+        category: "Varsity",
+        catLink: "VARSITY.html",
         name: "Ted Jacket",
         price: "299.000 VND",
         color: ["Blue", "Gray"],
@@ -10,6 +12,8 @@ let data = [
     },
     //hoodie
     {
+        category: "Hoodies",
+        catLink: "HOODIES.html",
         name: "Script Hoodie",
         price: "229.000 VND",
         color: ["Black", "Grey"],
@@ -17,6 +21,8 @@ let data = [
         imglink2: "assets/img/danhmucsanpham/HOODIES/script-hoodie1.jpg",
     },
     {
+        category: "Hoodies",
+        catLink: "HOODIES.html",
         name: "Signature Zipup Hoodie",
         price: "229.000 VND",
         color: ["Grey", "Black"],
@@ -25,6 +31,8 @@ let data = [
     },
     //jacket
     {
+        category: "Jacket",
+        catLink: "JACKET.html",
         name: "Windbreaker Gorpcore Jacket",
         price: "239.000 VND",
         color: ["Black", "White"],
@@ -32,6 +40,8 @@ let data = [
         imglink2: "assets/img/danhmucsanpham/JACKET/windbreaker-gorpcore-jacket1.jpg",
     },
     {
+        category: "Jacket",
+        catLink: "JACKET.html",
         name: "Sporty Jacket",
         price: "249.000 VND",
         color: ["Black Grey", "White Red"],
@@ -40,6 +50,8 @@ let data = [
     },
     //cardigan
     {
+        category: "Cardigans",
+        catLink: "CARDIGANS.html",
         name: "Schoolknit Cardigan",
         price: "179.000 VND",
         color: ["Grey", "Cream White"],
@@ -48,6 +60,8 @@ let data = [
     },
     //t-shirts
     {
+        category: "T-Shirts & Polo Shirts",
+        catLink: "T-SHIRTS-POLO-SHIRTS.html",
         name: "Bloke Tee",
         price: "149.000 VND",
         color: ["Black", "White"],
@@ -55,6 +69,8 @@ let data = [
         imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/bloke-tee1.jpg",
     },
     {
+        category: "T-Shirts & Polo Shirts",
+        catLink: "T-SHIRTS-POLO-SHIRTS.html",
         name: "Cities Ball Tee",
         price: "149.000 VND",
         color: ["White", "Light Blue"],
@@ -62,7 +78,11 @@ let data = [
         imglink2: "assets/img/danhmucsanpham/T-SHIRTS-POLO-SHIRTS/cities-ball-tee2.jpg",
     }
 ];
-
+function loadData(nameSP) {
+    //load new
+    let result = data.find((item) => item.name === nameSP);
+    localStorage.setItem("data", JSON.stringify(result));
+}
 
 // hiện nút xem chi tiết sản phẩm khi hover
 $(document).ready(function () {
@@ -78,6 +98,7 @@ $(document).ready(function () {
         });
     });
 });
+
 //Kiểm tra ràng buộc modal đăng nhập và đăng ký
 $(document).ready(function () {
     function ktraten1() {
@@ -207,7 +228,8 @@ $(document).ready(function () {
             });
             [...document.getElementsByClassName("prodColor")].forEach((elem, index) => {
                 elem.textContent = prodData.color[index];
-            })
+            });
+            $(".prodCategory").html(`<a class=\"text-uppercase\" href=${prodData.catLink}>${prodData.category}</a>`)
 
         // nút tăng giảm số lượng trong trang chi tiết sản phẩm
         // Lấy đối tượng input và hai nút tăng/giảm
@@ -215,7 +237,7 @@ $(document).ready(function () {
         let btnDecrease = document.querySelector("#button-giam");
         let btnIncrease = document.querySelector("#button-tang");
 
-        // Định nghĩa hàm tăng giảm số lượng sản phẩm
+        //function thay số lượng
         function changeQuantity(delta) {
             let value = parseInt(input.value);
             if (isNaN(value) || value === 1 && delta === -1) {
@@ -225,11 +247,11 @@ $(document).ready(function () {
                 input.value = value;
             }
         }
+
         // Thêm sự kiện click cho nút tăng và giảm
         btnIncrease.addEventListener("click", function () {
             changeQuantity(1);
         });
-
         btnDecrease.addEventListener("click", function () {
             changeQuantity(-1);
         });
@@ -296,13 +318,6 @@ function addCart() {
     alert("Thêm sản phẩm vào giỏ hàng thành công!");
 }
 
-//preload data vào localStorage
-function loadData(nameSP) {
-    //load new
-    let result = data.find((item) => item.name === nameSP);
-    localStorage.setItem("data", JSON.stringify(result));
-}
-
 
 //trang giỏ hàng
 function deleteRow(btn, nameSP) {
@@ -318,7 +333,6 @@ function deleteRow(btn, nameSP) {
     }
     row.parentNode.removeChild(row);
 }
-
 $(document).ready(function () {
     if (window.location.pathname.includes("cart")) {
         let listSP = document.getElementsByClassName('cartList')[0];
@@ -331,8 +345,8 @@ $(document).ready(function () {
     }
 })
 
-//trang checkout
 
+//trang checkout
 $(document).ready(function () {
   let cart = $('.checkoutInfo');
   let cartDB = JSON.parse(localStorage.cart);
