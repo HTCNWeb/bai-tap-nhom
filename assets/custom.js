@@ -289,9 +289,6 @@ $(document).ready(function () {
                 }
             });
     }
-
-
-
 });
 function addCart() {
     //get sản phẩm có sẵn trong data
@@ -321,7 +318,6 @@ function addCart() {
 
 //trang giỏ hàng
 function deleteRow(btn, nameSP) {
-    console.log(btn)
     let row = btn.closest('tr');
     let cartDB = JSON.parse(localStorage.cart);
     let index = cartDB.findIndex(function(item) {
@@ -355,9 +351,7 @@ $(document).ready(function () {
         let prodInfo = element.prodName.split('\n');
         let prodString = `<li class="list-group-item d-flex justify-content-between lh-condensed"><div><h6 style="color: black;"><b>${prodInfo[0]}</b></h6><small class="text-muted">${prodInfo[1]}</small></div><span class="text-muted">${(Number(element.prodPrice.replace(/\s/g, '').replace('VND', ''))*element.prodQuantity).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', 'K')}</span></li>`
         cart.append(prodString);
-        console.log(Number(element.prodPrice.replace(/\s/g, '').replace('VND', ''))*element.prodQuantity)
         total += Number(element.prodPrice.replace(/\s/g, '').replace('VND', ''))*element.prodQuantity;
-        console.log(total)
     })
     cart.append(`<li class="list-group-item d-flex justify-content-between"><span>Tổng (VNĐ)</span><strong>${total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace('₫', 'K')}</strong></li>`)
 })
